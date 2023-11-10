@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="https://vistapay.io/Main/m128/images/favicon.png" />
+    <title>Claim Tokens</title>
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.3.0/web3.min.js"></script>
+</head>
+<body>
+
+    <div id="toast" class="toast">
+        <img id="toast-icon" src="" alt="" style="vertical-align: middle;"/>
+        <span id="toast-message">Error message here</span>
+    </div>
+
+    
+    <div class="container">
+        <h1>You will get 200 VISTAPAY Tokens</h1>
+        <hr>
+        <div id="contract_details">
+            <p class="status">Airdrop status: <span id="airdrop_active">Wallet not connected</span></p>
+        </div>
+        <div class="requirements">
+            <label class="custom-checkbox">
+                <input type="checkbox" id="twitterCheckbox" disabled>
+                <span class="checkbox-label">
+                    Follow us on <a class="twitter" href="https://twitter.com/VistapayGlobal" target="_blank">Twitter</a>
+                </span>
+            </label>
+            <br>
+            <label class="custom-checkbox">
+                <input type="checkbox" id="telegramCheckbox" disabled>
+                <span class="checkbox-label">
+                    Join our <a class="telegram" href="https://t.me/vistapay" target="_blank">Telegram</a>
+                </span>
+            </label>
+
+        </div>
+        
+        
+        <div class="options">
+            <button class="option-button" id="claim_btn" >CLAIM NOW</button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
