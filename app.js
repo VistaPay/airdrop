@@ -89,15 +89,18 @@ function showToast(error, state = 'error') {
     toastIcon.src = iconSrc;
   
     let finalMessage;
+    let errorMessage = typeof error === 'string' ? error : error.message;
 
     // Check if the error message contains 'execution reverted'
-    if (typeof error === 'string' && error.includes('execution reverted')) {
+    if (errorMessage && errorMessage.includes('execution reverted')) {
         const errorRegex = /execution reverted: (.*)/;
-        finalMessage = errorRegex.exec(error)[1];
-        finalMessage = finalMessage.replace(/["',]/g, ''); // Remove double quotes and comma
+        const matches = errorRegex.exec(errorMessage);
+        if (matches && matches[1]) {
+            finalMessage = matches[1].replace(/["',]/g, ''); // Remove double quotes and comma
+        }
     } else {
-        // If it's a normal message, display as it is
-        finalMessage = typeof error === 'string' ? error : error.message;
+        // If it's a normal message or doesn't match the pattern, display as it is
+        finalMessage = errorMessage;
     }
 
     console.log("Final message: ", finalMessage); // Log the final message
@@ -106,6 +109,7 @@ function showToast(error, state = 'error') {
   
     setTimeout(function() { toast.className = toast.className.replace("show", ""); }, state === 'pending' ? 100000 : 50000);
 }
+
 
 
 
