@@ -36,7 +36,7 @@ async function claimTokens() {
         const balanceWei = await web3.eth.getBalance(accounts[0]);
         const balance = web3.utils.fromWei(balanceWei, 'ether');
         if (parseFloat(balance) < 0.004) {
-            showToast("Insufficient BNB balance. You need at least $1 in yoru wallet to proceed.")
+            showToast("Insufficient BNB balance.")
             return;
         }
 
