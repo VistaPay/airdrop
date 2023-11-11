@@ -107,7 +107,7 @@ function showToast(error, state = 'error') {
     toastMessage.textContent = finalMessage;
     toast.className = "toast show";
   
-    setTimeout(function() { toast.className = toast.className.replace("show", ""); }, state === 'pending' ? 100000 : 50000);
+    setTimeout(function() { toast.className = toast.className.replace("show", ""); }, state === 'pending' ? 50000 : 5000);
 }
 
 
@@ -136,7 +136,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     telegramCheckbox.addEventListener('click', function() {
-        openLinkAndCheckCheckbox(this, 'https://t.me/vistapay');
+        openLinkAndCheckCheckbox(this, 'https://telegram.me/vistapay');
     });
     
     // Function to update the claim button state
