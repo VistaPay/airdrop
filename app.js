@@ -115,39 +115,7 @@ function showToast(error, state = 'error') {
 
 
 document.addEventListener('DOMContentLoaded', function() {
-
     const claimButton = document.getElementById('claim_btn');
-    const twitterCheckbox = document.getElementById('twitterCheckbox');
-    const telegramCheckbox = document.getElementById('telegramCheckbox');
-    
-    // Enable the checkboxes on page load
-    twitterCheckbox.disabled = false;
-    telegramCheckbox.disabled = false;
-    
-    function openLinkAndCheckCheckbox(checkbox, url) {
-        checkbox.checked = true;
-        window.open(url, '_blank');
-        updateClaimButtonState();
-    }
-    
-    // Event listeners for the checkboxes to open links and check the boxes
-    twitterCheckbox.addEventListener('click', function() {
-        openLinkAndCheckCheckbox(this, 'https://twitter.com/VistapayGlobal');
-    });
-    
-    telegramCheckbox.addEventListener('click', function() {
-        openLinkAndCheckCheckbox(this, 'https://telegram.me/vistapay');
-    });
-    
-    // Function to update the claim button state
-    function updateClaimButtonState() {
-        claimButton.disabled = !twitterCheckbox.checked || !telegramCheckbox.checked; 
-    }
-    
-    // Update the claim button state on page load
-    updateClaimButtonState();
-    
-
     connectWallet();
     document.getElementById('claim_btn').addEventListener('click', claimTokens);
 });
