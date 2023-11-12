@@ -1,12 +1,12 @@
 body {
-    background: url('https://wallpaperaccess.com/full/6473105.jpg');           
+    background: url('bg.png');
     display: flex;
     justify-content: center;
     align-items: center;
     background-repeat: no-repeat;
     background-size: cover;
-    min-height: 100vh;
-    margin: 10;
+    min-height: 98vh;
+    margin: 10px;
     font-family: Arial, sans-serif;
 }
 
@@ -17,17 +17,28 @@ h1 {
 .container {
     text-align: center;
     padding: 30px;
-    background: rgba(255, 255, 255, 0.1);
+    background: linear-gradient(45deg, #0015278c, #ffffff40);
     border-radius: 10px;
     backdrop-filter: blur(10px);
     box-shadow: 0px 0px 20px 0px rgb(0 0 0);
-    max-width: 400px;
+    max-width: 50%;
     width: 100%;
+}
+
+@media screen and (max-width:550px) { 
+    .container {
+        max-width: 85%;
+    }
+
+    .container h1 {
+        font-size: 37px !important;
+    }
 }
 
 .container h1 {
     color: white;
     margin-bottom: 20px;
+    font-size: 50px;
 }
 
 .options {
@@ -37,11 +48,12 @@ h1 {
 }
 
 .option-button {
-    background: #d9ac00;
+    background: orange;
     color: white;
     border: none;
     border-radius: 5px;
     padding: 10px 20px;
+    font-weight: 900;
     cursor: pointer;
     font-size: 16px;
     transition: background 0.3s ease;
@@ -105,17 +117,6 @@ h1 {
     padding-left: 115px;
 }
 
-@media screen and (max-width:475px) {
-    .requirements {
-        display: flex;
-        flex-direction: column;
-        align-items: baseline;
-        padding-left: 75px;
-    }
-
-    
-
-}
 
 .requirements .custom-checkbox input[type="checkbox"] {
     /* Hide the default checkbox */
@@ -165,4 +166,26 @@ h1 {
 
 .telegram:hover {
     text-decoration: underline; /* Optional: Underline on hover for better visibility */
+}
+
+
+.user_link{
+    color: #000;
+    background: #fff;
+    border-radius: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    box-shadow: 0px 5px 14px 2px #595959;
+    font-family: system-ui;
+    word-wrap: break-word;
+}
+
+#referral_link {
+    color: orange;
+    font-size: 14px;
+}
+
+#referred_by {
+    color: orange;
+    font-size: 14px;
 }
